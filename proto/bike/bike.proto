@@ -34,9 +34,9 @@ message UpdateBikeDto {
 message Bike {
   int32 id = 1;
   string name = 2;
-  string description = 2;
-  string image = 3;
-  string biketype = 4;
+  string description = 3;
+  string image = 4;
+  string biketype = 5;
 }
 
 message BikeList {

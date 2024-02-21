@@ -39,6 +39,7 @@ export class BikeRepository implements IBikeRepository {
     return result;
   }
   async getBikes(name: string): Promise<Bike[]> {
+    console.log('name', name);
     const result = await (this.prisma['Bike'] as PrismaBike).findMany();
     return result;
   }
