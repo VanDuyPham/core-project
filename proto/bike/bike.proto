@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package bike;
+
+service BikeService {
+  rpc GetBikes (GetBikesDto) returns (BikeList) {}
+  rpc GetBike (GetBikeDto) returns (Bike) {}
+  rpc CreateBike (CreateBikeDto) returns (Bike) {}
+  rpc UpdateBike (UpdateBikeDto) returns (Bike) {}
+}
+
+message GetBikesDto {
+  string name = 1;
+}
+
+message GetBikeDto {
+  int32 id = 1;
+}
+
+message CreateBikeDto {
+  string name = 1;
+  optional string description = 2;
+  optional string image = 3;
+  string biketype = 4;
+}
+
+message UpdateBikeDto {
+  int32 id = 1;
+  optional string description = 2;
+  optional string image = 3;
+  string biketype = 4;
+}
+
+message Bike {
+  int32 id = 1;
+  string name = 2;
+  string description = 2;
+  string image = 3;
+  string biketype = 4;
+}
+
+message BikeList {
+  repeated Bike bikes = 1;
+}

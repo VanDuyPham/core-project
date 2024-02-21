@@ -1,0 +1,85 @@
+export const CAMPAIGN_TYPES = {
+  PUSH_NOTIFICATION: 1,
+  POPUP: 2,
+  THIRD_PARTY: 3,
+} as const;
+
+export type CampaignType = (typeof CAMPAIGN_TYPES)[keyof typeof CAMPAIGN_TYPES];
+
+export const CAMPAIGN_DISPLAY_CONDITION_SETTINGS = {
+  NONE: 1,
+  SPECIFIC_PAGE: 2,
+  LOGIN_LANDING_PAGE: 3,
+};
+
+export type CampaignDisplayConditionSetting =
+  (typeof CAMPAIGN_DISPLAY_CONDITION_SETTINGS)[keyof typeof CAMPAIGN_DISPLAY_CONDITION_SETTINGS];
+
+export const CAMPAIGN_POPUP_TYPES = {
+  BANNER: 1,
+  TEXT: 2,
+  RECOMMEND: 3,
+};
+
+export type CampaignPopupType =
+  (typeof CAMPAIGN_POPUP_TYPES)[keyof typeof CAMPAIGN_POPUP_TYPES];
+
+export const CAMPAIGN_POPUP_BANNER_SETTINGS = {
+  TITLE: 1,
+  IMAGE: 2,
+  LINK_TO: 3,
+  TITLE_FONT_SIZE: 4,
+};
+
+export type CampaignPopupBannerSetting =
+  (typeof CAMPAIGN_POPUP_BANNER_SETTINGS)[keyof typeof CAMPAIGN_POPUP_BANNER_SETTINGS];
+
+export enum SERVICE_NAME_LOGGER {
+  MYSQL = 'MYSQL',
+  REDSHIFT = 'REDSHIFT',
+  ACCESS = 'ACCESS',
+  SYSTEM = 'SYSTEM',
+}
+export const CAMPAIGN_POPUP_RECOMMEND_SETTINGS = {
+  TYPE: 1,
+  TARGET: 2,
+  DISPLAY_NUMBER_OF_CONTENTS: 3,
+  TITLE: 4,
+  FONT_SIZE: 5,
+  EXCLUDED_CONTENTS: 6,
+};
+
+export type CampaignPopupRecommendSetting =
+  (typeof CAMPAIGN_POPUP_RECOMMEND_SETTINGS)[keyof typeof CAMPAIGN_POPUP_RECOMMEND_SETTINGS];
+
+export const CAMPAIGN_RECOMMENDATION_TYPES = {
+  IMPRESSION_RANKING_RECOMMENDATION: '1',
+  SIMILAR_ITEM_RECOMMENDATION: '2',
+  PERSONALIZED_ITEM_RECOMMENDATION: '3',
+};
+
+export const CAMPAIGN_RECOMMENDATION_MAPED_TYPES_NAME = {
+  [CAMPAIGN_RECOMMENDATION_TYPES.IMPRESSION_RANKING_RECOMMENDATION]:
+    'ImpressionRankingRecommendation',
+  [CAMPAIGN_RECOMMENDATION_TYPES.SIMILAR_ITEM_RECOMMENDATION]:
+    'SimilarItemRecommendation',
+  [CAMPAIGN_RECOMMENDATION_TYPES.PERSONALIZED_ITEM_RECOMMENDATION]:
+    'PersonalizedItemRecommendation',
+};
+
+export type CampaignRecommendType =
+  (typeof CAMPAIGN_RECOMMENDATION_TYPES)[keyof typeof CAMPAIGN_RECOMMENDATION_TYPES];
+
+export const AGGREGATE_TYPE_SQL = {
+  AVERAGE: 'avg',
+  MAXIMUM: 'max',
+  MINIMUM: 'min',
+  MEDIAN: 'max',
+  SUM: 'sum',
+  ACCUMULATIVE: 'sum',
+};
+export const CAMPAIGN_POPUP_DISPLAY_LIMIT_DEFAULT = 3;
+
+export const GLOBAL_SETTINGS = {
+  CAMPAIGN_POPUP_DISPLAY_LIMIT_NAME: 'campaign-popup-display-limit',
+} as const;
